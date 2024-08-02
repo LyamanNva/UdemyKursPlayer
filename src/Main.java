@@ -8,6 +8,11 @@ public class Main {
         Ders d2 = new Ders(2, "Java nedir", 9.2);
         Ders d3 = new Ders(3, "Primitive Veri Tipleri", 22.9);
         Ders d4 = new Ders(4, "Diziler", 15.9);
-        Kurs java
+        Kurs javaKursu=new Kurs("Java Kursu",emre);
+        javaKursu.kursaDersEkle(d1);
+        javaKursu.kursaDersEkle(d2);
+        javaKursu.kursaDersEkle(d3);
+        javaKursu.kursaDersEkle(d4);
+
     }
 }

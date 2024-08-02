@@ -18,7 +18,11 @@ public class Kurs {
     }
 
     public void kursaEgitmenEkle(Egitmen yeniEgitmen) {
-        kursEgitmenleri.add(yeniEgitmen);
+        if (!kursEgitmenleri.contains(yeniEgitmen)){
+            kursEgitmenleri.add(yeniEgitmen);
+        }else {
+            System.out.println(yeniEgitmen.getIsim()+" zaten kursta tanimli bir egitmendir");
+        }
     }
 
     public void kursdanEgitmenSil(Egitmen silinecekEgitmen) {
@@ -33,7 +37,7 @@ public class Kurs {
         return kursdakiDersler.size();
     }
 
-    public int kurstakiToplamDerslerinDakikaSuresi() {
+    private int kurstakiToplamDerslerinDakikaSuresi() {
         double toplamSure = 0;
         for (Ders ders : kursdakiDersler) {
             toplamSure = toplamSure + ders.getDakika();
@@ -41,7 +45,7 @@ public class Kurs {
         return (int) toplamSure;
     }
 
-    public boolean kursYayindaKontrol() {
+    private boolean kursYayindaKontrol() {
         if (kursdakiDersler.size() >= 5 && kurstakiToplamDerslerinDakikaSuresi() > 60) {
             yayinda = true;
             return true;
